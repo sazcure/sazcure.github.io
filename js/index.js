@@ -1,27 +1,23 @@
-let introWrapper = $('#intro > .wrapper')
 
+let prevScrollPos = 0
 $(window).on('scroll', () => {
 
-
-    //keeping the heading div in center while the parallax scrolling
     let wScroll = $(this).scrollTop();
 
-    $('#heading > h3').css({ 'transform': `translateY(${wScroll / 3}px)` });
-    $('#heading > h1').css({ 'transform': `translateY(${wScroll / 3}px)` });
+    //keeping the welcome div in center while the parallax scrolling
+    $('#welcome > h3').css({ 'transform': `translateY(${wScroll / 3}px)` });
+    $('#welcome > h1').css({ 'transform': `translateY(${wScroll / 3}px)` });
 
+    console.log(`wScroll : ${wScroll}`)
 
-    //controlling the opacity of intro div with scrolling
-    let scrollTop = $(this).scrollTop(),
-        offset = introWrapper.offset().top,
-        calc = ((scrollTop - offset) / offset + 0.3);
+    //sticky super cool nav
+    let navBar = $('#nav-bar'),
+        navBarOuterHeight = $('#nav-bar').outerHeight(),
+        transformed = navBar.css('transform');
     
-        console.log(`CALC : ${calc}\nscrollTop : ${scrollTop}\n OFFSET : ${offset} `)
 
-    if (scrollTop >= offset) {
-        calc = calc > 1 ? 1 : calc < 0 ? 0 : calc;
-        introWrapper.css({ opacity: calc});
-    }
-    
+    prevScrollPos = wScroll;
+
 });
 
 

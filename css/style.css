@@ -8,6 +8,7 @@ body {
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  margin: 0;
 }
 
 *::-moz-selection {
@@ -20,22 +21,6 @@ body {
   background-color: #fefefe;
 }
 
-.page {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-  -ms-flex-direction: column;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-}
-
 body > #wrapper {
   width: 100%;
   height: 100vh;
@@ -43,39 +28,172 @@ body > #wrapper {
 
 h1 {
   font-family: Caveat;
-  font-size: calc(4em + 3vh + 3vw);
+  font-size: calc(2.5em + 3vh + 3vw);
 }
 
 h3 {
   font-family: Pacifico;
-  font-size: calc(3em + 0.2vh + 0.2vw);
+  font-size: calc(2em + 2vh + 2vw);
 }
 
-h1,
-h3 {
+a,
+p,
+li {
+  font-size: calc(1em + 0.5vh + 0.5vw);
+}
+
+p,
+li {
+  line-height: 1.3;
+  font-family: Ubuntu, Roboto;
+}
+
+.contents {
+  padding: 7.5vh 10vw;
+  background-color: #efd7d7;
+  position: relative;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.contents:before {
+  content: '';
+  width: 100%;
+  height: 1vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.3)), to(transparent));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  position: absolute;
+  top: -1vh;
+  left: 0;
+}
+
+.contents:after {
+  content: '';
+  width: 100%;
+  height: 1vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(transparent));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  position: absolute;
+  bottom: -1vh;
+  left: 0;
+}
+
+.contents * {
+  text-align: center;
+}
+
+.window {
+  height: 55vh;
+}
+
+#nav-bar {
   margin: 0;
+  padding: 0;
+  padding-left: 5%;
+  list-style: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;
+  color: #fefbfb;
+  background-color: #404040;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  position: relative;
+  position: relative;
 }
 
-#heading {
+#nav-bar:after {
+  content: '';
+  width: 100%;
+  height: 1vh;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.3)), to(transparent));
+  background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent);
+  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.3), transparent);
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), transparent);
+  position: absolute;
+  bottom: -1vh;
+  left: 0;
+}
+
+#nav-bar:before {
+  content: '';
+  width: 100%;
+  height: 1vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.3)), to(transparent));
+  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
+  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
+  position: absolute;
+  top: -1vh;
+  left: 0;
+}
+
+@media screen and (max-width: 700px) {
+  #nav-bar {
+    overflow-x: scroll;
+    padding: 0;
+    text-align: center;
+  }
+}
+
+#nav-bar li {
+  padding: 15px;
+}
+
+#nav-bar li:hover {
+  background-color: #0d3a35;
+  color: #fff;
+}
+
+#welcome {
   height: 100vh;
   background-image: url("https://images.pexels.com/photos/159211/headache-pain-pills-medication-159211.jpeg?auto=compress&cs=tinysrgb&h=350");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 
-#heading > h3 {
-  margin-top: 10vh;
+#welcome > h3, #welcome h1 {
+  margin-top: 20vh;
 }
 
-#heading > h1 > span:nth-child(2) {
-  font-family: 'Homemade Apple';
-  font-size: calc(0.5em + 1vh + 1vw);
-  margin-left: 20px;
+#welcome h1 {
+  font-family: 'Homemade Apple', cursive;
+  font-size: calc(3em + 2vh + 2vw);
+  margin: 20px;
 }
 
-#heading > * {
+#welcome * {
   margin: 0;
   padding: 0;
   -webkit-transform: translateY(-10%);
@@ -83,30 +201,30 @@ h3 {
   transform: translateY(-10%);
 }
 
-#intro {
-  padding: 7.5vh 10vw;
+#welcome *::-moz-selection {
+  color: #efd7d7;
+  background-color: #404040;
+}
+
+#welcome *::selection {
+  color: #efd7d7;
+  background-color: #404040;
+}
+
+#intro1 > .contents {
   background-image: -webkit-gradient(linear, left top, right top, from(#efd7d7), to(#e5e1e1));
   background-image: -webkit-linear-gradient(left, #efd7d7, #e5e1e1);
   background-image: -o-linear-gradient(left, #efd7d7, #e5e1e1);
   background-image: linear-gradient(to right, #efd7d7, #e5e1e1);
-  position: relative;
 }
 
-#intro p {
-  text-align: center;
-  font-family: Ubuntu, Roboto;
-  font-size: calc(1em + 0.5vh + 0.5vw);
-  line-height: 1.3;
+#intro2 {
+  background-image: url("https://images.pexels.com/photos/4154/clinic-doctor-health-hospital.jpg?auto=compress&cs=tinysrgb&h=350");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
-#intro:before {
-  content: '';
-  width: 100%;
-  height: 5vh;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0.3)), to(transparent));
-  background-image: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
-  background-image: -o-linear-gradient(bottom, rgba(0, 0, 0, 0.3), transparent);
-  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.3), transparent);
-  position: absolute;
-  top: -5vh;
+#intro2 > .contents {
+  background-color: #efe1d7;
 }
