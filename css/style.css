@@ -125,6 +125,7 @@ li {
     padding: 0;
     text-align: center;
     -webkit-mask-image: -webkit-linear-gradient(left, rgba(64, 64, 64, 0.8), #404040 20px, #404040 90%, rgba(64, 64, 64, 0.8));
+    mask-image: linear-gradient(to right, rgba(64, 64, 64, 0.8), #404040 20px, #404040 90%, rgba(64, 64, 64, 0.8));
   }
 }
 
